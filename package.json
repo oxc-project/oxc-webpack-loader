@@ -9,8 +9,12 @@
     "oxc-transform": "^0.115.0",
     "webpack": ">=5"
   },
+  "scripts": {
+    "test": "vitest run"
+  },
   "devDependencies": {
     "oxc-transform": "^0.115.0",
+    "vitest": "^4.0.18",
     "webpack": "^5.69.1"
   }
 }
