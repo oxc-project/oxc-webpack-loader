@@ -31,7 +31,7 @@ Webpack loader for [oxc-transform](https://npmx.dev/package/oxc-transform). A dr
 ## Install
 
 ```bash
-npm install -D oxc-loader oxc-transform
+npm install -D oxc-webpack-loader oxc-transform
 ```
 
 ## Usage
@@ -46,7 +46,7 @@ module.exports = {
         test: /\.[jt]sx?$/,
         exclude: /node_modules/,
         use: {
-          loader: "oxc-loader",
+          loader: "oxc-webpack-loader",
           options: {
             // oxc-transform options
             // https://npmx.dev/package/oxc-transform
@@ -62,7 +62,7 @@ module.exports = {
 
 ```js
 {
-  loader: "oxc-loader",
+  loader: "oxc-webpack-loader",
   options: {
     jsx: {
       runtime: "automatic", // or "classic"
@@ -79,7 +79,7 @@ TypeScript is supported out of the box. No additional configuration is needed - 
 
 ```js
 {
-  loader: "oxc-loader",
+  loader: "oxc-webpack-loader",
   options: {
     target: "es2015",
   },
@@ -90,7 +90,7 @@ TypeScript is supported out of the box. No additional configuration is needed - 
 
 ```js
 {
-  loader: "oxc-loader",
+  loader: "oxc-webpack-loader",
   options: {
     sourcemap: true,
   },
@@ -103,7 +103,7 @@ Source maps are also automatically enabled when webpack's `devtool` option is se
 
 ```js
 {
-  loader: "oxc-loader",
+  loader: "oxc-webpack-loader",
   options: {
     sync: true,
   },
@@ -127,7 +127,7 @@ Oxc is free and open-source software licensed under the [MIT License](./LICENSE)
 [ci-badge]: https://github.com/oxc-project/oxc-webpack-loader/actions/workflows/ci.yml/badge.svg?event=push&branch=main
 [ci-url]: https://github.com/oxc-project/oxc-webpack-loader/actions/workflows/ci.yml?query=event%3Apush+branch%3Amain
 [npm-badge]: https://img.shields.io/npm/v/oxc-loader
-[npm-url]: https://npmx.dev/package/oxc-loader
+[npm-url]: https://npmx.dev/package/oxc-webpack-loader
 [discord-badge]: https://img.shields.io/discord/1079625926024900739?logo=discord&label=Discord
 [discord-url]: https://discord.gg/9uXCAwqQZW
 [website-badge]: https://img.shields.io/badge/Website-blue
