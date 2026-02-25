@@ -5,14 +5,14 @@
     "license": "MIT",
     "scripts": {
         "build": "webpack && cp public/* build",
-        "start": "ecstatic build --port 3000"
+        "start": "serve build -p 3000"
     },
     "dependencies": {
         "react": "^17.0.2",
         "react-dom": "^17.0.2"
     },
     "devDependencies": {
-        "ecstatic": "^3.3.0",
+        "serve": "^14.2.4",
         "webpack": "^5.69.1",
         "webpack-cli": "^4.9.2"
     }
