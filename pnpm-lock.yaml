@@ -7,8 +7,8 @@ settings:
 catalogs:
   default:
     react:
-      specifier: ^17.0.2
-      version: 17.0.2
+      specifier: ^19.0.0
+      version: 19.2.4
     react-dom:
       specifier: ^17.0.2
       version: 17.0.2
@@ -40,10 +40,10 @@ importers:
     dependencies:
       react:
         specifier: 'catalog:'
-        version: 17.0.2
+        version: 19.2.4
       react-dom:
         specifier: 'catalog:'
-        version: 17.0.2(react@17.0.2)
+        version: 17.0.2(react@19.2.4)
     devDependencies:
       webpack:
         specifier: 'catalog:'
@@ -59,10 +59,10 @@ importers:
     dependencies:
       react:
         specifier: 'catalog:'
-        version: 17.0.2
+        version: 19.2.4
       react-dom:
         specifier: 'catalog:'
-        version: 17.0.2(react@17.0.2)
+        version: 17.0.2(react@19.2.4)
     devDependencies:
       webpack:
         specifier: 'catalog:'
@@ -78,10 +78,10 @@ importers:
     dependencies:
       react:
         specifier: 'catalog:'
-        version: 17.0.2
+        version: 19.2.4
       react-dom:
         specifier: 'catalog:'
-        version: 17.0.2(react@17.0.2)
+        version: 17.0.2(react@19.2.4)
     devDependencies:
       webpack:
         specifier: 'catalog:'
@@ -97,10 +97,10 @@ importers:
     dependencies:
       react:
         specifier: 'catalog:'
-        version: 17.0.2
+        version: 19.2.4
       react-dom:
         specifier: 'catalog:'
-        version: 17.0.2(react@17.0.2)
+        version: 17.0.2(react@19.2.4)
     devDependencies:
       webpack:
         specifier: 'catalog:'
@@ -1682,8 +1682,8 @@ packages:
     peerDependencies:
       react: 17.0.2
 
-  react@17.0.2:
-    resolution: {integrity: sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==}
+  react@19.2.4:
+    resolution: {integrity: sha512-9nfp2hYpCwOjAN+8TZFGhtWEwgvWHXqESH8qT89AT/lWklpLON22Lc8pEtnpsZz7VmawabSU0gCjnj8aC0euHQ==}
     engines: {node: '>=0.10.0'}
 
   readable-stream@2.3.8:
@@ -3611,17 +3611,14 @@ snapshots:
       iconv-lite: 0.4.24
       unpipe: 1.0.0
 
-  react-dom@17.0.2(react@17.0.2):
+  react-dom@17.0.2(react@19.2.4):
     dependencies:
       loose-envify: 1.4.0
       object-assign: 4.1.1
-      react: 17.0.2
+      react: 19.2.4
       scheduler: 0.20.2
 
-  react@17.0.2:
-    dependencies:
-      loose-envify: 1.4.0
-      object-assign: 4.1.1
+  react@19.2.4: {}
 
   readable-stream@2.3.8:
     dependencies:

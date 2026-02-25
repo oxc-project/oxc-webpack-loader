@@ -5,7 +5,7 @@ packages:
   - example-sync
 
 catalog:
-  react: ^17.0.2
+  react: ^19.0.0
   react-dom: ^17.0.2
   webpack: ^5.98.0
   webpack-cli: ^6.0.1
