@@ -24,11 +24,7 @@ module.exports = {
           options: {
             sourcemap: true,
             jsx: {
-              runtime: "classic",
-              pragma: "React.createElement",
-              pragmaFrag: "React.Fragment",
-              throwIfNamespace: true,
-              development: false,
+              runtime: "automatic",
             },
           },
         },

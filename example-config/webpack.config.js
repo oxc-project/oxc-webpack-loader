@@ -23,7 +23,7 @@ module.exports = {
           options: {
             target: "es2015",
             jsx: {
-              runtime: "classic",
+              runtime: "automatic",
             },
           },
         },
