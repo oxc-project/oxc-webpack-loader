@@ -36,11 +36,7 @@ function compile(entry, loaderOptions = {}, webpackOptions = {}) {
         return;
       }
       if (stats.hasErrors()) {
-        reject(
-          new Error(
-            stats.compilation.errors.map((e) => e.message).join("\n")
-          )
-        );
+        reject(new Error(stats.compilation.errors.map((e) => e.message).join("\n")));
         return;
       }
       const files = {};
@@ -55,58 +51,45 @@ function compile(entry, loaderOptions = {}, webpackOptions = {}) {
 
 describe("oxc-loader", () => {
   it("transforms a basic JS file", async () => {
-    const files = await compile(
-      path.join(__dirname, "fixtures", "basic.js")
-    );
+    const files = await compile(path.join(__dirname, "fixtures", "basic.js"));
     expect(files["bundle.js"]).toContain("console.log");
   });
 
   it("transforms JSX with classic runtime", async () => {
-    const files = await compile(
-      path.join(__dirname, "fixtures", "jsx.jsx"),
-      {
-        jsx: {
-          runtime: "classic",
-          pragma: "React.createElement",
-          pragmaFrag: "React.Fragment",
-        },
-      }
-    );
+    const files = await compile(path.join(__dirname, "fixtures", "jsx.jsx"), {
+      jsx: {
+        runtime: "classic",
+        pragma: "React.createElement",
+        pragmaFrag: "React.Fragment",
+      },
+    });
     expect(files["bundle.js"]).toContain(".createElement(");
     expect(files["bundle.js"]).not.toContain("<h1>");
   });
 
   it("transforms JSX with automatic runtime", async () => {
-    const files = await compile(
-      path.join(__dirname, "fixtures", "jsx.jsx"),
-      {
-        jsx: {
-          runtime: "automatic",
-        },
-      }
-    );
+    const files = await compile(path.join(__dirname, "fixtures", "jsx.jsx"), {
+      jsx: {
+        runtime: "automatic",
+      },
+    });
     expect(files["bundle.js"]).toContain("react/jsx-runtime");
     expect(files["bundle.js"]).not.toContain("<h1>");
   });
 
   it("transforms TypeScript", async () => {
-    const files = await compile(
-      path.join(__dirname, "fixtures", "typescript.ts")
-    );
+    const files = await compile(path.join(__dirname, "fixtures", "typescript.ts"));
     expect(files["bundle.js"]).not.toContain(": string");
     expect(files["bundle.js"]).not.toContain(": number");
     expect(files["bundle.js"]).toContain("greet");
   });
 
   it("transforms TSX", async () => {
-    const files = await compile(
-      path.join(__dirname, "fixtures", "typescript-jsx.tsx"),
-      {
-        jsx: {
-          runtime: "automatic",
-        },
-      }
-    );
+    const files = await compile(path.join(__dirname, "fixtures", "typescript-jsx.tsx"), {
+      jsx: {
+        runtime: "automatic",
+      },
+    });
     expect(files["bundle.js"]).toContain("react/jsx-runtime");
     expect(files["bundle.js"]).not.toContain(": Props");
     expect(files["bundle.js"]).not.toContain("<div>");
@@ -116,7 +99,7 @@ describe("oxc-loader", () => {
     const files = await compile(
       path.join(__dirname, "fixtures", "basic.js"),
       { sourcemap: true },
-      { devtool: "source-map" }
+      { devtool: "source-map" },
     );
     expect(files["bundle.js.map"]).toBeDefined();
     const sourceMap = JSON.parse(files["bundle.js.map"]);
@@ -124,18 +107,14 @@ describe("oxc-loader", () => {
   });
 
   it("works in sync mode", async () => {
-    const files = await compile(
-      path.join(__dirname, "fixtures", "basic.js"),
-      { sync: true }
-    );
+    const files = await compile(path.join(__dirname, "fixtures", "basic.js"), { sync: true });
     expect(files["bundle.js"]).toContain("console.log");
   });
 
   it("targets a specific ES version", async () => {
-    const files = await compile(
-      path.join(__dirname, "fixtures", "es-target.js"),
-      { target: "es2015" }
-    );
+    const files = await compile(path.join(__dirname, "fixtures", "es-target.js"), {
+      target: "es2015",
+    });
     expect(files["bundle.js"]).not.toContain("...");
   });
 
@@ -147,7 +126,7 @@ describe("oxc-loader", () => {
           runtime: "automatic",
         },
       },
-      { mode: "development" }
+      { mode: "development" },
     );
     expect(files["bundle.js"]).toContain("jsx-dev-runtime");
   });

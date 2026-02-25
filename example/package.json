@@ -1,19 +1,19 @@
 {
-    "name": "example-basic",
-    "version": "1.0.0",
-    "main": "index.js",
-    "license": "MIT",
-    "scripts": {
-        "build": "webpack",
-        "start": "webpack serve"
-    },
-    "dependencies": {
-        "react": "catalog:",
-        "react-dom": "catalog:"
-    },
-    "devDependencies": {
-        "webpack": "catalog:",
-        "webpack-cli": "catalog:",
-        "webpack-dev-server": "catalog:"
-    }
+  "name": "example-basic",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack serve"
+  },
+  "dependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:"
+  },
+  "devDependencies": {
+    "webpack": "catalog:",
+    "webpack-cli": "catalog:",
+    "webpack-dev-server": "catalog:"
+  }
 }

@@ -114,8 +114,8 @@ Source maps are also automatically enabled when webpack's `devtool` option is se
 
 All [oxc-transform `TransformOptions`](https://npmx.dev/package/oxc-transform) are supported, plus:
 
-| Option | Type | Default | Description |
-| --- | --- | --- | --- |
+| Option | Type      | Default | Description                                                                                                                                                                                           |
+| ------ | --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `sync` | `boolean` | `false` | Use `transformSync` instead of `transform`. The async `transform` spawns a thread per call, which can be slower due to overhead. Sync mode runs on the main thread and may be faster for small files. |
 
 ## License

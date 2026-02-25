@@ -1,11 +1,11 @@
 import React from "react";
 
 interface Props {
-    name: string;
+  name: string;
 }
 
 function Greeting({ name }: Props) {
-    return <div>Hello, {name}!</div>;
+  return <div>Hello, {name}!</div>;
 }
 
 export default Greeting;

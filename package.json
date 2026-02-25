@@ -2,17 +2,13 @@
   "name": "oxc-webpack-loader",
   "version": "0.0.1",
   "description": "Webpack loader for oxc",
+  "license": "MIT",
   "author": "oxc-project",
-  "main": "src/index.js",
+  "repository": "https://github.com/oxc-project/oxc-webpack-loader",
   "files": [
     "src"
   ],
-  "repository": "https://github.com/oxc-project/oxc-webpack-loader",
-  "license": "MIT",
-  "peerDependencies": {
-    "oxc-transform": "^0.115.0",
-    "webpack": ">=5"
-  },
+  "main": "src/index.js",
   "scripts": {
     "test": "vitest run"
   },
@@ -20,5 +16,9 @@
     "oxc-transform": "^0.115.0",
     "vitest": "^4.0.18",
     "webpack": "^5.98.0"
+  },
+  "peerDependencies": {
+    "oxc-transform": "^0.115.0",
+    "webpack": ">=5"
   }
 }

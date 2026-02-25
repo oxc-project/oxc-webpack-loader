@@ -5,13 +5,10 @@ function makeLoader() {
     const callback = this.async();
     const filename = this.resourcePath;
 
-    let loaderOptions =
-      (typeof this.getOptions === "function" ? this.getOptions() : {}) || {};
+    let loaderOptions = (typeof this.getOptions === "function" ? this.getOptions() : {}) || {};
 
     const sourceMaps =
-      loaderOptions.sourcemap === undefined
-        ? this.sourceMap
-        : loaderOptions.sourcemap;
+      loaderOptions.sourcemap === undefined ? this.sourceMap : loaderOptions.sourcemap;
 
     const transformOptions = Object.assign({}, loaderOptions, {
       sourcemap: !!sourceMaps,
@@ -30,11 +27,7 @@ function makeLoader() {
     }
 
     // Auto detect lang when jsx options are provided but file has .js extension
-    if (
-      !transformOptions.lang &&
-      transformOptions.jsx &&
-      transformOptions.jsx !== "preserve"
-    ) {
+    if (!transformOptions.lang && transformOptions.jsx && transformOptions.jsx !== "preserve") {
       const ext = filename.slice(filename.lastIndexOf("."));
       if (ext === ".js") {
         transformOptions.lang = "jsx";
@@ -59,16 +52,14 @@ function makeLoader() {
         transform(filename, source, transformOptions).then(
           (output) => {
             if (output.errors.length > 0) {
-              callback(
-                new Error(output.errors.map((e) => e.message).join("\n"))
-              );
+              callback(new Error(output.errors.map((e) => e.message).join("\n")));
               return;
             }
             callback(null, output.code, output.map ?? undefined);
           },
           (err) => {
             callback(err);
-          }
+          },
         );
       }
     } catch (e) {
