@@ -3,3 +3,10 @@ packages:
   - example-config
   - example-src-dir
   - example-sync
+
+catalog:
+  react: ^17.0.2
+  react-dom: ^17.0.2
+  serve: ^14.2.4
+  webpack: ^5.69.1
+  webpack-cli: ^4.9.2

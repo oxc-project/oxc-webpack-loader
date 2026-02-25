@@ -4,6 +4,24 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+catalogs:
+  default:
+    react:
+      specifier: ^17.0.2
+      version: 17.0.2
+    react-dom:
+      specifier: ^17.0.2
+      version: 17.0.2
+    serve:
+      specifier: ^14.2.4
+      version: 14.2.5
+    webpack:
+      specifier: ^5.69.1
+      version: 5.105.2
+    webpack-cli:
+      specifier: ^4.9.2
+      version: 4.10.0
+
 importers:
 
   .:
@@ -21,77 +39,77 @@ importers:
   example:
     dependencies:
       react:
-        specifier: ^17.0.2
+        specifier: 'catalog:'
         version: 17.0.2
       react-dom:
-        specifier: ^17.0.2
+        specifier: 'catalog:'
         version: 17.0.2(react@17.0.2)
     devDependencies:
       serve:
-        specifier: ^14.2.4
+        specifier: 'catalog:'
         version: 14.2.5
       webpack:
-        specifier: ^5.69.1
+        specifier: 'catalog:'
         version: 5.105.2(webpack-cli@4.10.0)
       webpack-cli:
-        specifier: ^4.9.2
+        specifier: 'catalog:'
         version: 4.10.0(webpack@5.105.2)
 
   example-config:
     dependencies:
       react:
-        specifier: ^17.0.2
+        specifier: 'catalog:'
         version: 17.0.2
       react-dom:
-        specifier: ^17.0.2
+        specifier: 'catalog:'
         version: 17.0.2(react@17.0.2)
     devDependencies:
       serve:
-        specifier: ^14.2.4
+        specifier: 'catalog:'
         version: 14.2.5
       webpack:
-        specifier: ^5.69.1
+        specifier: 'catalog:'
         version: 5.105.2(webpack-cli@4.10.0)
       webpack-cli:
-        specifier: ^4.9.2
+        specifier: 'catalog:'
         version: 4.10.0(webpack@5.105.2)
 
   example-src-dir:
     dependencies:
       react:
-        specifier: ^17.0.2
+        specifier: 'catalog:'
         version: 17.0.2
       react-dom:
-        specifier: ^17.0.2
+        specifier: 'catalog:'
         version: 17.0.2(react@17.0.2)
     devDependencies:
       serve:
-        specifier: ^14.2.4
+        specifier: 'catalog:'
         version: 14.2.5
       webpack:
-        specifier: ^5.69.1
+        specifier: 'catalog:'
         version: 5.105.2(webpack-cli@4.10.0)
       webpack-cli:
-        specifier: ^4.9.2
+        specifier: 'catalog:'
         version: 4.10.0(webpack@5.105.2)
 
   example-sync:
     dependencies:
       react:
-        specifier: ^17.0.2
+        specifier: 'catalog:'
         version: 17.0.2
       react-dom:
-        specifier: ^17.0.2
+        specifier: 'catalog:'
         version: 17.0.2(react@17.0.2)
     devDependencies:
       serve:
-        specifier: ^14.2.4
+        specifier: 'catalog:'
         version: 14.2.5
       webpack:
-        specifier: ^5.69.1
+        specifier: 'catalog:'
         version: 5.105.2(webpack-cli@4.10.0)
       webpack-cli:
-        specifier: ^4.9.2
+        specifier: 'catalog:'
         version: 4.10.0(webpack@5.105.2)
 
 packages:
