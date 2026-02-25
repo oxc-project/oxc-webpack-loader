@@ -29,6 +29,20 @@ function makeLoader() {
       });
     }
 
+    // Auto detect lang when jsx options are provided but file has .js extension
+    if (
+      !transformOptions.lang &&
+      transformOptions.jsx &&
+      transformOptions.jsx !== "preserve"
+    ) {
+      const ext = filename.slice(filename.lastIndexOf("."));
+      if (ext === ".js") {
+        transformOptions.lang = "jsx";
+      } else if (ext === ".ts") {
+        transformOptions.lang = "tsx";
+      }
+    }
+
     // Remove loader-specific options
     const sync = transformOptions.sync;
     delete transformOptions.sync;
