@@ -26,7 +26,7 @@
 
 ## oxc-loader
 
-Webpack loader for [oxc-transform](https://npmx.dev/package/oxc-transform). A drop-in replacement for `swc-loader` and `babel-loader` that uses Oxc for fast JavaScript and TypeScript transformation.
+Webpack loader for [oxc-transform](https://oxc.rs/docs/guide/usage/transformer.html#features). A drop-in replacement for `swc-loader` and `babel-loader` that uses Oxc for fast JavaScript and TypeScript transformation.
 
 ## Install
 
@@ -49,7 +49,7 @@ module.exports = {
           loader: "oxc-webpack-loader",
           options: {
             // oxc-transform options
-            // https://npmx.dev/package/oxc-transform
+            // https://oxc.rs/docs/guide/usage/transformer.html#features
           },
         },
       },
@@ -112,7 +112,7 @@ Source maps are also automatically enabled when webpack's `devtool` option is se
 
 ## Options
 
-All [oxc-transform `TransformOptions`](https://npmx.dev/package/oxc-transform) are supported, plus:
+All [oxc-transform `TransformOptions`](https://oxc.rs/docs/guide/usage/transformer.html#features) are supported, plus:
 
 | Option | Type      | Default | Description                                                                                                                                                                                           |
 | ------ | --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
