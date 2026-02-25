@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Webpack loader for oxc",
   "main": "src/index.js",
-  "repository": "https://github.com/nicolo-ribaudo/oxc-loader",
+  "repository": "https://github.com/oxc-project/oxc-webpack-loader",
   "license": "MIT",
   "peerDependencies": {
     "oxc-transform": "^0.115.0",

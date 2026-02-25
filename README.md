@@ -26,7 +26,7 @@
 
 ## oxc-loader
 
-Webpack loader for [oxc-transform](https://www.npmjs.com/package/oxc-transform). A drop-in replacement for `swc-loader` and `babel-loader` that uses Oxc for fast JavaScript and TypeScript transformation.
+Webpack loader for [oxc-transform](https://npmx.dev/package/oxc-transform). A drop-in replacement for `swc-loader` and `babel-loader` that uses Oxc for fast JavaScript and TypeScript transformation.
 
 ## Install
 
@@ -49,7 +49,7 @@ module.exports = {
           loader: "oxc-loader",
           options: {
             // oxc-transform options
-            // https://www.npmjs.com/package/oxc-transform
+            // https://npmx.dev/package/oxc-transform
           },
         },
       },
@@ -112,7 +112,7 @@ Source maps are also automatically enabled when webpack's `devtool` option is se
 
 ## Options
 
-All [oxc-transform `TransformOptions`](https://www.npmjs.com/package/oxc-transform) are supported, plus:
+All [oxc-transform `TransformOptions`](https://npmx.dev/package/oxc-transform) are supported, plus:
 
 | Option | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -123,11 +123,11 @@ All [oxc-transform `TransformOptions`](https://www.npmjs.com/package/oxc-transfo
 Oxc is free and open-source software licensed under the [MIT License](./LICENSE).
 
 [license-badge]: https://img.shields.io/badge/license-MIT-blue.svg
-[license-url]: https://github.com/nicolo-ribaudo/oxc-loader/blob/main/LICENSE
-[ci-badge]: https://github.com/nicolo-ribaudo/oxc-loader/actions/workflows/ci.yml/badge.svg?event=push&branch=main
-[ci-url]: https://github.com/nicolo-ribaudo/oxc-loader/actions/workflows/ci.yml?query=event%3Apush+branch%3Amain
+[license-url]: https://github.com/oxc-project/oxc-webpack-loader/blob/main/LICENSE
+[ci-badge]: https://github.com/oxc-project/oxc-webpack-loader/actions/workflows/ci.yml/badge.svg?event=push&branch=main
+[ci-url]: https://github.com/oxc-project/oxc-webpack-loader/actions/workflows/ci.yml?query=event%3Apush+branch%3Amain
 [npm-badge]: https://img.shields.io/npm/v/oxc-loader
-[npm-url]: https://www.npmjs.com/package/oxc-loader
+[npm-url]: https://npmx.dev/package/oxc-loader
 [discord-badge]: https://img.shields.io/discord/1079625926024900739?logo=discord&label=Discord
 [discord-url]: https://discord.gg/9uXCAwqQZW
 [website-badge]: https://img.shields.io/badge/Website-blue
