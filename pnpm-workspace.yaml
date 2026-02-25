@@ -1,0 +1,5 @@
+packages:
+  - example
+  - example-config
+  - example-src-dir
+  - example-sync
