@@ -9,6 +9,10 @@ module.exports = {
         path: path.join(__dirname, "build"),
         filename: "bundle.js",
     },
+    devServer: {
+        static: path.join(__dirname, "public"),
+        port: 3000,
+    },
     module: {
         rules: [
             {

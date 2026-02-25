@@ -4,16 +4,16 @@
     "main": "index.js",
     "license": "MIT",
     "scripts": {
-        "build": "webpack && cp public/* build",
-        "start": "serve build -p 3000"
+        "build": "webpack",
+        "start": "webpack serve"
     },
     "dependencies": {
         "react": "catalog:",
         "react-dom": "catalog:"
     },
     "devDependencies": {
-        "serve": "catalog:",
         "webpack": "catalog:",
-        "webpack-cli": "catalog:"
+        "webpack-cli": "catalog:",
+        "webpack-dev-server": "catalog:"
     }
 }

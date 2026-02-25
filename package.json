@@ -15,6 +15,6 @@
   "devDependencies": {
     "oxc-transform": "^0.115.0",
     "vitest": "^4.0.18",
-    "webpack": "^5.69.1"
+    "webpack": "^5.98.0"
   }
 }
