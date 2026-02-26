@@ -17,7 +17,7 @@
     "vitest": "^4.0.18",
     "webpack": "^5.98.0"
   },
-  "packageManager": "pnpm@10.30.2",
+  "packageManager": "pnpm@10.30.3",
   "peerDependencies": {
     "oxc-transform": "^0.115.0",
     "webpack": ">=5"
