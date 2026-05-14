@@ -3,6 +3,8 @@ packages:
   - example-config
   - example-src-dir
   - example-sync
+allowBuilds:
+  esbuild: true
 
 catalog:
   react: ^19.2.4
