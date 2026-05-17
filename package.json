@@ -19,7 +19,7 @@
   },
   "packageManager": "pnpm@11.0.4",
   "peerDependencies": {
-    "oxc-transform": "^0.115.0",
+    "oxc-transform": "^0.115.0 || ^0.131.0",
     "webpack": ">=5"
   }
 }
