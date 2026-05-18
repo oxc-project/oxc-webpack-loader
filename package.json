@@ -13,13 +13,13 @@
     "test": "vitest run"
   },
   "devDependencies": {
-    "oxc-transform": "^0.131.0",
+    "oxc-transform": "^0.132.0",
     "vitest": "^4.0.18",
     "webpack": "^5.98.0"
   },
   "packageManager": "pnpm@11.0.4",
   "peerDependencies": {
-    "oxc-transform": "^0.115.0 || ^0.131.0",
+    "oxc-transform": "^0.115.0 || ^0.131.0 || ^0.132.0",
     "webpack": ">=5"
   }
 }
