@@ -10,16 +10,18 @@
   ],
   "main": "src/index.js",
   "scripts": {
-    "test": "vitest run"
+    "test": "vp test run",
+    "prepare": "vp config"
   },
   "devDependencies": {
     "oxc-transform": "^0.133.0",
-    "vitest": "^4.0.18",
+    "vite-plus": "catalog:",
+    "vitest": "catalog:",
     "webpack": "^5.98.0"
   },
-  "packageManager": "pnpm@11.0.4",
   "peerDependencies": {
     "oxc-transform": "^0.115.0 || ^0.131.0 || ^0.132.0 || ^0.133.0",
     "webpack": ">=5"
-  }
+  },
+  "packageManager": "pnpm@11.0.4"
 }
