@@ -26,10 +26,4 @@ jobs:
         with:
           cache: true
       - run: vp test
-      - name: Build examples
-        run: |
-          for d in example example-config example-src-dir example-sync; do
-            echo "::group::build $d"
-            (cd "$d" && vp run build)
-            echo "::endgroup::"
-          done
+      - run: vp run --filter './example*' build
