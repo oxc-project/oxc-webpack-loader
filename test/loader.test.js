@@ -95,6 +95,26 @@ describe("oxc-loader", () => {
     expect(files["bundle.js"]).not.toContain("<div>");
   });
 
+  it("transforms TypeScript and TSX together in one build", async () => {
+    const files = await compile(
+      [
+        path.join(__dirname, "fixtures", "typescript.ts"),
+        path.join(__dirname, "fixtures", "typescript-jsx.tsx"),
+      ],
+      {
+        jsx: {
+          runtime: "automatic",
+        },
+      },
+    );
+    expect(files["bundle.js"]).toContain("greet");
+    expect(files["bundle.js"]).toContain("react/jsx-runtime");
+    expect(files["bundle.js"]).not.toContain(": string");
+    expect(files["bundle.js"]).not.toContain(": number");
+    expect(files["bundle.js"]).not.toContain(": Props");
+    expect(files["bundle.js"]).not.toContain("<div>");
+  });
+
   it("generates source maps when enabled", async () => {
     const files = await compile(
       path.join(__dirname, "fixtures", "basic.js"),

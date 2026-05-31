@@ -31,8 +31,6 @@ function makeLoader() {
       const ext = filename.slice(filename.lastIndexOf("."));
       if (ext === ".js") {
         transformOptions.lang = "jsx";
-      } else if (ext === ".ts") {
-        transformOptions.lang = "tsx";
       }
     }
 
