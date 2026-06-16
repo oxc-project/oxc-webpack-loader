@@ -5,6 +5,10 @@
   "license": "MIT",
   "author": "oxc-project",
   "repository": "https://github.com/oxc-project/oxc-webpack-loader",
+  "homepage": "https://github.com/oxc-project/oxc-webpack-loader#readme",
+  "bugs": {
+    "url": "https://github.com/oxc-project/oxc-webpack-loader/issues"
+  },
   "files": [
     "src"
   ],
