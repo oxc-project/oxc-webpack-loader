@@ -2,6 +2,10 @@
   "name": "oxc-webpack-loader",
   "version": "1.0.1",
   "description": "Webpack loader for oxc",
+  "homepage": "https://github.com/oxc-project/oxc-webpack-loader#readme",
+  "bugs": {
+    "url": "https://github.com/oxc-project/oxc-webpack-loader/issues"
+  },
   "license": "MIT",
   "author": "oxc-project",
   "repository": "https://github.com/oxc-project/oxc-webpack-loader",
