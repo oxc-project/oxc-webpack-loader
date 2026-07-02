@@ -18,9 +18,9 @@
     "prepare": "vp config"
   },
   "devDependencies": {
+    "@types/react": "catalog:",
     "oxc-transform": "^0.135.0",
     "vite-plus": "catalog:",
-    "vitest": "catalog:",
     "webpack": "^5.98.0"
   },
   "peerDependencies": {

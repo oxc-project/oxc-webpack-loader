@@ -1,7 +1,7 @@
 const { transform, transformSync } = require("oxc-transform");
 
 function makeLoader() {
-  return function (source, inputSourceMap) {
+  return function (source, _inputSourceMap) {
     const callback = this.async();
     const filename = this.resourcePath;
 
