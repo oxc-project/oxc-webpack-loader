@@ -1,59 +1,69 @@
 const { transform, transformSync } = require("oxc-transform");
 
+function getLoaderOptions(loaderContext) {
+  if (typeof loaderContext.getOptions !== "function") {
+    return {};
+  }
+  return loaderContext.getOptions() || {};
+}
+
+function shouldUseSourceMap(loaderContext, loaderOptions) {
+  return loaderOptions.sourcemap === undefined
+    ? !!loaderContext.sourceMap
+    : !!loaderOptions.sourcemap;
+}
+
+function getTransformOptions(loaderContext, filename) {
+  const loaderOptions = getLoaderOptions(loaderContext);
+  const { sync = false, ...transformOptions } = loaderOptions;
+
+  transformOptions.sourcemap = shouldUseSourceMap(loaderContext, loaderOptions);
+
+  if (
+    loaderContext.mode &&
+    transformOptions.jsx &&
+    typeof transformOptions.jsx === "object" &&
+    !Object.prototype.hasOwnProperty.call(transformOptions.jsx, "development")
+  ) {
+    transformOptions.jsx = {
+      ...transformOptions.jsx,
+      development: loaderContext.mode === "development",
+    };
+  }
+
+  if (!transformOptions.lang && transformOptions.jsx && filename.endsWith(".js")) {
+    transformOptions.lang = "jsx";
+  }
+
+  return { sync, transformOptions };
+}
+
+function createTransformError(errors) {
+  return new Error(errors.map((error) => error.message).join("\n"));
+}
+
+function handleTransformResult(callback, output) {
+  if (output.errors.length > 0) {
+    callback(createTransformError(output.errors));
+    return;
+  }
+  callback(null, output.code, output.map ?? undefined);
+}
+
 function makeLoader() {
   return function (source, _inputSourceMap) {
     const callback = this.async();
     const filename = this.resourcePath;
-
-    let loaderOptions = (typeof this.getOptions === "function" ? this.getOptions() : {}) || {};
-
-    const sourceMaps =
-      loaderOptions.sourcemap === undefined ? this.sourceMap : loaderOptions.sourcemap;
-
-    const transformOptions = Object.assign({}, loaderOptions, {
-      sourcemap: !!sourceMaps,
-    });
-
-    // Auto detect development mode for JSX
-    if (
-      this.mode &&
-      transformOptions.jsx &&
-      typeof transformOptions.jsx === "object" &&
-      !Object.prototype.hasOwnProperty.call(transformOptions.jsx, "development")
-    ) {
-      transformOptions.jsx = Object.assign({}, transformOptions.jsx, {
-        development: this.mode === "development",
-      });
-    }
-
-    // Auto detect lang when jsx options are provided but file has .js extension
-    if (!transformOptions.lang && transformOptions.jsx && transformOptions.jsx !== "preserve") {
-      const ext = filename.slice(filename.lastIndexOf("."));
-      if (ext === ".js") {
-        transformOptions.lang = "jsx";
-      }
-    }
-
-    // Remove loader-specific options
-    const sync = transformOptions.sync;
-    delete transformOptions.sync;
+    const { sync, transformOptions } = getTransformOptions(this, filename);
 
     try {
       if (sync) {
         const output = transformSync(filename, source, transformOptions);
-        if (output.errors.length > 0) {
-          callback(new Error(output.errors.map((e) => e.message).join("\n")));
-          return;
-        }
-        callback(null, output.code, output.map ?? undefined);
+        handleTransformResult(callback, output);
       } else {
         transform(filename, source, transformOptions).then(
           (output) => {
-            if (output.errors.length > 0) {
-              callback(new Error(output.errors.map((e) => e.message).join("\n")));
-              return;
-            }
-            callback(null, output.code, output.map ?? undefined);
+            handleTransformResult(callback, output);
           },
           (err) => {
             callback(err);
