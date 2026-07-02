@@ -5,11 +5,12 @@ interface Person {
 
 type Node<T> = {
   name: string;
-}
+  value?: T;
+};
 
 // Generic arrow function — must stay parseable as TS, not TSX (where `<T>` would be a JSX tag)
-const traverse = <T>(node: Node<T> | null, visit: (node: Node<T>) => void) => {
-  return false
+const _traverse = <T>(_node: Node<T> | null, _visit: (node: Node<T>) => void) => {
+  return false;
 };
 
 function greet(person: Person): string {

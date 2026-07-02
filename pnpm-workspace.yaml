@@ -7,21 +7,18 @@ allowBuilds:
   esbuild: true
 
 catalog:
+  "@types/react": ^19.2.7
   react: ^19.2.4
   react-dom: ^19.2.4
   webpack: ^5.98.0
   webpack-cli: ^7.0.0
   webpack-dev-server: ^5.2.0
   vite: npm:@voidzero-dev/vite-plus-core@latest
-  vitest: npm:@voidzero-dev/vite-plus-test@latest
   vite-plus: latest
 overrides:
   vite: "catalog:"
-  vitest: "catalog:"
 peerDependencyRules:
   allowAny:
     - vite
-    - vitest
   allowedVersions:
     vite: "*"
-    vitest: "*"
