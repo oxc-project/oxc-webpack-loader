@@ -23,5 +23,5 @@
     "oxc-transform": "^0.115.0 || ^0.131.0 || ^0.132.0 || ^0.133.0 || ^0.134.0 || ^0.135.0 || ^0.138.0",
     "webpack": ">=5"
   },
-  "packageManager": "pnpm@11.4.0"
+  "packageManager": "pnpm@11.9.0"
 }
