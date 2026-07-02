@@ -199,6 +199,17 @@ describe("oxc-loader", () => {
     expect(files["bundle.js"]).toContain("jsx-dev-runtime");
   });
 
+  it("parses JSX in .js files when JSX should be preserved", async () => {
+    const { code } = await runLoader("const element = <span />;", {
+      filename: "component.js",
+      options: {
+        jsx: "preserve",
+      },
+    });
+
+    expect(code).toContain("const element = <span />;");
+  });
+
   it("does not override an explicit JSX development option", async () => {
     const { code } = await runLoader("const element = <span />;", {
       filename: "component.js",
