@@ -132,3 +132,11 @@ Oxc is free and open-source software licensed under the [MIT License](./LICENSE)
 [discord-url]: https://discord.gg/9uXCAwqQZW
 [website-badge]: https://img.shields.io/badge/Website-blue
 [website-url]: https://oxc.rs
+
+## ❤ Who's [Sponsoring Oxc](https://github.com/sponsors/Boshen)?
+
+<p align="center">
+  <a href="https://github.com/sponsors/Boshen">
+    <img src="https://raw.githubusercontent.com/Boshen/sponsors/main/sponsors.svg" alt="Our sponsors" />
+  </a>
+</p>
